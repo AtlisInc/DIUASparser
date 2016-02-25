@@ -24,11 +24,11 @@
     </licenses>
   
     <scm>
-        <connection>scm:git:git://github.com/AtlisInc/DIUASparser.git</connection>
+        <connection>scm:git://git@github.com:AtlisInc/DIUASparser.git</connection>
         <developerConnection>scm:git:git@github.com:AtlisInc/DIUASparser.git</developerConnection>
         <url>http://github.com/AtlisInc/DIUASparser</url>
-      <tag>decibelinsight-uasparser-1.0.0</tag>
-  </scm>
+        <tag>decibelinsight-uasparser-1.0.0</tag>
+    </scm>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -190,7 +190,7 @@
                         <artifactId>maven-gpg-plugin</artifactId>
                         <version>1.4</version>
                         <configuration>
-                        <passphrase />
+                            <passphrase />
                         </configuration>
                         <executions>
                             <execution>
