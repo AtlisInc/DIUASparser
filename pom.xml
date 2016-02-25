@@ -24,7 +24,7 @@
     </licenses>
   
     <scm>
-        <connection>scm:git://git@github.com:AtlisInc/DIUASparser.git</connection>
+        <connection>scm:git:git://github.com/AtlisInc/DIUASparser.git</connection>
         <developerConnection>scm:git:git@github.com:AtlisInc/DIUASparser.git</developerConnection>
         <url>https://github.com/AtlisInc/DIUASparser</url>
         <tag>decibelinsight-uasparser-1.0.0</tag>
