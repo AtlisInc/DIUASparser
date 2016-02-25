@@ -6,7 +6,7 @@
     <groupId>me.atlis</groupId>
     <artifactId>decibelinsight-uasparser</artifactId>
 
-    <version>1.0.6-SNAPSHOT</version>
+    <version>1.0.5-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>DIUASparser</name>
@@ -27,7 +27,6 @@
         <connection>scm:git://git@github.com:AtlisInc/DIUASparser.git</connection>
         <developerConnection>scm:git:git@github.com:AtlisInc/DIUASparser.git</developerConnection>
         <url>http://github.com/AtlisInc/DIUASparser</url>
-    <tag>HEAD</tag>
   </scm>
 
     <properties>
@@ -188,9 +187,9 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.6</version>
+                        <version>1.4</version>
                         <configuration>
-                            <passphrase value="" />
+                            <passphrase />
                         </configuration>
                         <executions>
                             <execution>
