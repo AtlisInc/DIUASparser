@@ -6,7 +6,7 @@
     <groupId>me.atlis</groupId>
     <artifactId>decibelinsight-uasparser</artifactId>
 
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>DIUASparser</name>
@@ -154,9 +154,9 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.5.3</version>
-                <!--                <configuration>
-                    <arguments>-Dgpg.passphrase=${gpg.passphrase}</arguments>
-                </configuration>-->
+                <configuration>
+                    <arguments></arguments>
+                </configuration>
             </plugin>
 
         </plugins>
@@ -189,9 +189,9 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
                         <version>1.4</version>
-                        <!--<configuration>-->
-                        <!--<passphrase>${gpg.passphrase}</passphrase>-->
-                        <!--</configuration>-->
+                        <configuration>
+                        <passphrase></passphrase>
+                        </configuration>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
