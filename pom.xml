@@ -63,6 +63,12 @@
             <email>michael@atlis.me</email>
             <url>https://atlis.me</url>
         </developer>
+        <developer>
+            <id>nirfatlis</id>
+            <name>Nir Fiegelshtein</name>
+            <email>nir@atlis.me</email>
+            <url>https://atlis.me</url>
+        </developer>
     </developers>
 
     <build>
