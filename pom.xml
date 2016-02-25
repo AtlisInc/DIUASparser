@@ -66,8 +66,6 @@
     </developers>
 
     <build>
-
-        <!-- Include the README, LICENSE, and COPYING files: -->
         <resources>
             <resource>
                 <directory>${project.basedir}</directory>
@@ -130,7 +128,6 @@
                 <version>2.10.3</version>
                 <executions>
                     <execution>
-                        
                         <id>attach-javadoc</id>
                         <phase>verify</phase>
                         <goals>
