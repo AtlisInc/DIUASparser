@@ -6,7 +6,7 @@
     <groupId>me.atlis</groupId>
     <artifactId>decibelinsight-uasparser</artifactId>
 
-    <version>1.0.0</version>
+    <version>1.0.5-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>DIUASparser</name>
@@ -27,7 +27,6 @@
         <connection>scm:git://git@github.com:AtlisInc/DIUASparser.git</connection>
         <developerConnection>scm:git:git@github.com:AtlisInc/DIUASparser.git</developerConnection>
         <url>http://github.com/AtlisInc/DIUASparser</url>
-      <tag>decibelinsight-uasparser-1.0.0</tag>
   </scm>
 
     <properties>
