@@ -19,79 +19,82 @@ import java.util.List;
  */
 public class PHPFileParser {
 
-	private List<Section> sections;
+    private List<Section> sections;
 
-	public PHPFileParser(InputStream is) throws IOException {
-		loadFile(new InputStreamReader(is));
-	}
+    public PHPFileParser() {
+    }
 
-	public PHPFileParser(Reader reader) throws IOException {
-		loadFile(reader);
-	}
+    public PHPFileParser(InputStream is) throws IOException {
+        loadFile(new InputStreamReader(is));
+    }
 
-	public PHPFileParser(File file) throws IOException {
-		Reader reader = new FileReader(file);
-		try {
-			loadFile(reader);
-		} finally {
-			try {
-				reader.close();
-			} catch (IOException e) {
-			}
-		}
-	}
+    public PHPFileParser(Reader reader) throws IOException {
+        loadFile(reader);
+    }
 
-	private void loadFile(Reader reader) throws IOException {
-		this.sections = new ArrayList<Section>();
+    public PHPFileParser(File file) throws IOException {
+        Reader reader = new FileReader(file);
+        try {
+            loadFile(reader);
+        } finally {
+            try {
+                reader.close();
+            } catch (IOException e) {
+            }
+        }
+    }
 
-		BufferedReader bufferedReader = new BufferedReader(reader);
+    private void loadFile(Reader reader) throws IOException {
+        this.sections = new ArrayList<Section>();
 
-		int unnamedSectionCounter = 0;
+        BufferedReader bufferedReader = new BufferedReader(reader);
 
-		Section currentSection = null;
-		Entry currentEntry = null;
+        int unnamedSectionCounter = 0;
 
-		String line = bufferedReader.readLine();
-		while (line != null) {
-			if (line.trim().startsWith(";")) {
-				// comment, do nothing
-			} else if (line.trim().startsWith("[") && line.trim().endsWith("]")) {
-				String rawLine = line.trim();
-				String sectionName = rawLine.substring(1, rawLine.length() - 1);
-				currentSection = new Section(sectionName);
-				sections.add(currentSection);
-			} else {
-				if (currentSection == null) {
-					currentSection = new Section("unname section" + (++unnamedSectionCounter));
-					sections.add(currentSection);
-				}
+        Section currentSection = null;
+        Entry currentEntry = null;
 
-				int indexOfEquals = line.indexOf('=');
-				String key = line.substring(0, indexOfEquals);
-				String data = line.substring(indexOfEquals + 1);
-				key = key.replace('[', ' ');
-				key = key.replace(']', ' ');
-				key = key.trim();
-				data = data.trim();
-				if (data.startsWith("\"") && data.endsWith("\"")) {
-					data = data.substring(1, data.length() - 1);
-				}
+        String line = bufferedReader.readLine();
+        while (line != null) {
+            if (line.trim().startsWith(";")) {
+                // comment, do nothing
+            } else if (line.trim().startsWith("[") && line.trim().endsWith("]")) {
+                String rawLine = line.trim();
+                String sectionName = rawLine.substring(1, rawLine.length() - 1);
+                currentSection = new Section(sectionName);
+                sections.add(currentSection);
+            } else {
+                if (currentSection == null) {
+                    currentSection = new Section("unname section" + (++unnamedSectionCounter));
+                    sections.add(currentSection);
+                }
 
-				if (currentEntry == null || !currentEntry.getKey().equals(key)) {
-					currentEntry = new Entry(key);
-					currentSection.getEntries().add(currentEntry);
-				}
+                int indexOfEquals = line.indexOf('=');
+                String key = line.substring(0, indexOfEquals);
+                String data = line.substring(indexOfEquals + 1);
+                key = key.replace('[', ' ');
+                key = key.replace(']', ' ');
+                key = key.trim();
+                data = data.trim();
+                if (data.startsWith("\"") && data.endsWith("\"")) {
+                    data = data.substring(1, data.length() - 1);
+                }
 
-				currentEntry.getData().add(data);
-			}
+                if (currentEntry == null || !currentEntry.getKey().equals(key)) {
+                    currentEntry = new Entry(key);
+                    currentSection.getEntries().add(currentEntry);
+                }
 
-			line = bufferedReader.readLine();
-		}
+                currentEntry.getData().add(data);
+            }
 
-	}
+            line = bufferedReader.readLine();
+        }
 
-	public List<Section> getSections() {
-		return sections;
-	}
+    }
+
+    public List<Section> getSections() {
+        return sections;
+    }
 
 }

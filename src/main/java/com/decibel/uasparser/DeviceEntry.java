@@ -11,47 +11,50 @@ import java.util.List;
  */
 class DeviceEntry {
 
-	private String type;
-	private String ico;
-	private String infoUrl;
+    private String type;
+    private String ico;
+    private String infoUrl;
 
-	public DeviceEntry(List<String> data) {
-		Iterator<String> it = data.iterator();
-		this.type = it.next();
-		this.ico = it.next();
-		this.infoUrl = it.next();
-	}
+    public DeviceEntry() {
+    }
 
-	public String getType() {
-		return type;
-	}
+    public DeviceEntry(List<String> data) {
+        Iterator<String> it = data.iterator();
+        this.type = it.next();
+        this.ico = it.next();
+        this.infoUrl = it.next();
+    }
 
-	public void setType(String type) {
-		this.type = type;
-	}
+    public String getType() {
+        return type;
+    }
 
-	public String getIco() {
-		return ico;
-	}
+    public void setType(String type) {
+        this.type = type;
+    }
 
-	public void setIco(String ico) {
-		this.ico = ico;
-	}
+    public String getIco() {
+        return ico;
+    }
 
-	public String getInfoUrl() {
-		return infoUrl;
-	}
+    public void setIco(String ico) {
+        this.ico = ico;
+    }
 
-	public void setInfoUrl(String infoUrl) {
-		this.infoUrl = infoUrl;
-	}
+    public String getInfoUrl() {
+        return infoUrl;
+    }
+
+    public void setInfoUrl(String infoUrl) {
+        this.infoUrl = infoUrl;
+    }
 
     @Override
     public String toString() {
-        return  "Device: \n" +
-                "  Type: " + type + "\n" +
-                "  ICO: " + ico + "\n" +
-                "  Info URL: " + infoUrl;
+        return "Device: \n"
+                + "  Type: " + type + "\n"
+                + "  ICO: " + ico + "\n"
+                + "  Info URL: " + infoUrl;
     }
 
 }

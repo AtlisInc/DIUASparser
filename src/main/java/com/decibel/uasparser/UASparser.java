@@ -1,5 +1,8 @@
 package com.decibel.uasparser;
 
+import com.decibel.uasparser.fileparser.Entry;
+import com.decibel.uasparser.fileparser.PHPFileParser;
+import com.decibel.uasparser.fileparser.Section;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,12 +11,8 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-
 import jregex.Matcher;
 import jregex.Pattern;
-import com.decibel.uasparser.fileparser.Entry;
-import com.decibel.uasparser.fileparser.PHPFileParser;
-import com.decibel.uasparser.fileparser.Section;
 
 /**
  * User agent parser.

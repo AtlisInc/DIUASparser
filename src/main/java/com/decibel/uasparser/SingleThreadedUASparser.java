@@ -6,7 +6,6 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-
 import jregex.Matcher;
 import jregex.Pattern;
 
@@ -25,6 +24,9 @@ public class SingleThreadedUASparser extends UASparser {
     protected Map<Matcher, Long> compiledOsMatcherMap;
     protected Map<Matcher, Long> compiledDeviceMatcherMap;
 
+    public SingleThreadedUASparser() {
+    }
+    
     public SingleThreadedUASparser(InputStream inputStreamToDefinitionFile) throws IOException {
         super(inputStreamToDefinitionFile);
     }

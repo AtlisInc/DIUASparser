@@ -11,80 +11,83 @@ import java.util.List;
  */
 class OsEntry {
 
-	private String family;
-	private String name;
-	private String url;
-	private String company;
-	private String companyUrl;
-	private String ico;
+    private String family;
+    private String name;
+    private String url;
+    private String company;
+    private String companyUrl;
+    private String ico;
 
-	public OsEntry(List<String> data) {
-		Iterator<String> it = data.iterator();
-		this.family = it.next();
-		this.name = it.next();
-		this.url = it.next();
-		this.company = it.next();
-		this.companyUrl = it.next();
-		this.ico = it.next();
-	}
+    public OsEntry() {
+    }
 
-	public String getFamily() {
-		return family;
-	}
+    public OsEntry(List<String> data) {
+        Iterator<String> it = data.iterator();
+        this.family = it.next();
+        this.name = it.next();
+        this.url = it.next();
+        this.company = it.next();
+        this.companyUrl = it.next();
+        this.ico = it.next();
+    }
 
-	public void setFamily(String family) {
-		this.family = family;
-	}
+    public String getFamily() {
+        return family;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setFamily(String family) {
+        this.family = family;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getUrl() {
-		return url;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setUrl(String url) {
-		this.url = url;
-	}
+    public String getUrl() {
+        return url;
+    }
 
-	public String getCompany() {
-		return company;
-	}
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
-	public void setCompany(String company) {
-		this.company = company;
-	}
+    public String getCompany() {
+        return company;
+    }
 
-	public String getCompanyUrl() {
-		return companyUrl;
-	}
+    public void setCompany(String company) {
+        this.company = company;
+    }
 
-	public void setCompanyUrl(String companyUrl) {
-		this.companyUrl = companyUrl;
-	}
+    public String getCompanyUrl() {
+        return companyUrl;
+    }
 
-	public String getIco() {
-		return ico;
-	}
+    public void setCompanyUrl(String companyUrl) {
+        this.companyUrl = companyUrl;
+    }
 
-	public void setIco(String ico) {
-		this.ico = ico;
-	}
+    public String getIco() {
+        return ico;
+    }
+
+    public void setIco(String ico) {
+        this.ico = ico;
+    }
 
     @Override
     public String toString() {
-        return  "Operating System: \n" +
-                "  Family: " + family + "\n" +
-                "  Name: " + name + "\n" +
-                "  URL: " + url + "\n" +
-                "  Company: " + company + "\n" +
-                "  Company URL: " + companyUrl + "\n" +
-                "  ICO: " + ico;
+        return "Operating System: \n"
+                + "  Family: " + family + "\n"
+                + "  Name: " + name + "\n"
+                + "  URL: " + url + "\n"
+                + "  Company: " + company + "\n"
+                + "  Company URL: " + companyUrl + "\n"
+                + "  ICO: " + ico;
     }
 
 }

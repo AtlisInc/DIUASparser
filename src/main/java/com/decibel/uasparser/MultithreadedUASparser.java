@@ -5,7 +5,6 @@ import java.io.InputStream;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-
 import jregex.Matcher;
 
 /**
@@ -23,6 +22,9 @@ public class MultithreadedUASparser extends SingleThreadedUASparser {
     private ThreadLocal<Map<Matcher, Long>> compiledOsMatcherMapT;
     private ThreadLocal<Map<Matcher, Long>> compiledDeviceMatcherMapT;
 
+    public MultithreadedUASparser() {
+    }
+    
     public MultithreadedUASparser(InputStream inputStreamToDefinitionFile) throws IOException {
         super(inputStreamToDefinitionFile);
     }

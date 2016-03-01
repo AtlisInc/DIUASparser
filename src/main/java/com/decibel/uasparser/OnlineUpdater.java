@@ -1,5 +1,7 @@
 package com.decibel.uasparser;
 
+import com.decibel.uasparser.fileparser.PHPFileParser;
+import com.decibel.uasparser.fileparser.Section;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -15,9 +17,6 @@ import java.net.URL;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
-
-import com.decibel.uasparser.fileparser.PHPFileParser;
-import com.decibel.uasparser.fileparser.Section;
 
 /**
  * An updater which runs in a separate background thread and will update once per day.
@@ -45,6 +44,10 @@ public class OnlineUpdater extends Thread {
     protected File cacheFile;
     protected File propsFile;
 
+    public OnlineUpdater() {
+        this.updateInterval = 0;
+    }
+    
     /**
      * Create a new updater with the default interval of 1 day
      *
