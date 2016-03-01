@@ -7,7 +7,7 @@ A fast User Agent parser library, using data from [udger.com](http://udger.com/)
 <dependency>
   <groupId>me.atlis</groupId>
   <artifactId>decibelinsight-uasparser</artifactId>
-  <version>1.0.11</version>
+  <version>RELEASE</version>
 </dependency>
 ```
 
